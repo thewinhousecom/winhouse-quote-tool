@@ -1,0 +1,292 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Colors - Winhouse */
+  --color-brand-blue: #4464AA;      /* Primary */
+  --color-brand-green: #1D6F41;
+  --color-brand-yellow: #FDDE4B;
+  --color-brand-cyanellow: #ADBBDD;
+  --color-brand-notred: #D59BC0;
+  --color-brand-tangerine: #E07038;
+  
+  /* Semantic Colors */
+  --color-primary: var(--color-brand-blue);
+  --color-secondary: var(--color-brand-tangerine);
+  --color-accent: var(--color-brand-green);
+  
+  /* Background */
+  --background: #ffffff;
+  --foreground: #0f172a;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--color-brand-blue), #6B8DD6);
+  --gradient-secondary: linear-gradient(135deg, var(--color-brand-tangerine), #F4A460);
+  --gradient-accent: linear-gradient(135deg, var(--color-brand-green), #2E8B57);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--color-brand-blue);
+  --color-secondary: var(--color-brand-tangerine);
+  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f172a;
+    --foreground: #f1f5f9;
+  }
+}
+
+/* Font Face - Helvetica Neue */
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: local('Helvetica Neue'), local('HelveticaNeue');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-brand-cyanellow) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-brand-cyanellow);
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-brand-blue);
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom selection color */
+::selection {
+  background-color: var(--color-brand-blue);
+  color: white;
+}
+
+/* Logo Text Style */
+.logo-text {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-brand-blue);
+}
+
+.logo-text::after {
+  content: '.';
+  color: var(--color-brand-tangerine);
+}
+
+/* Gradient text utility */
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-secondary {
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Brand color utilities */
+.bg-brand-blue { background-color: var(--color-brand-blue); }
+.bg-brand-green { background-color: var(--color-brand-green); }
+.bg-brand-yellow { background-color: var(--color-brand-yellow); }
+.bg-brand-tangerine { background-color: var(--color-brand-tangerine); }
+.bg-brand-cyanellow { background-color: var(--color-brand-cyanellow); }
+.bg-brand-notred { background-color: var(--color-brand-notred); }
+
+.text-brand-blue { color: var(--color-brand-blue); }
+.text-brand-green { color: var(--color-brand-green); }
+.text-brand-yellow { color: var(--color-brand-yellow); }
+.text-brand-tangerine { color: var(--color-brand-tangerine); }
+.text-brand-cyanellow { color: var(--color-brand-cyanellow); }
+.text-brand-notred { color: var(--color-brand-notred); }
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(68, 100, 170, 0.1);
+}
+
+.dark .glass {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animation classes for GSAP */
+.gsap-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.gsap-scale-in {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.gsap-slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.gsap-slide-right {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+/* Smooth hover transitions */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(68, 100, 170, 0.15);
+}
+
+/* Button ripple effect */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.3s;
+}
+
+.btn-ripple:active::after {
+  transform: scale(2);
+  opacity: 1;
+  transition: 0s;
+}
+
+/* Focus ring override for better accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-brand-blue);
+  outline-offset: 2px;
+}
+
+/* Card hover glow effect */
+.card-glow {
+  position: relative;
+}
+
+.card-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: var(--gradient-primary);
+  border-radius: inherit;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  filter: blur(8px);
+}
+
+.card-glow:hover::before {
+  opacity: 0.5;
+}
+
+/* Animated underline */
+.animated-underline {
+  position: relative;
+}
+
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: width 0.3s ease;
+}
+
+.animated-underline:hover::after {
+  width: 100%;
+}
+
+/* Number counter animation */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-count-up {
+  animation: countUp 0.3s ease-out;
+}
+
+/* Pulse animation for CTAs */
+@keyframes pulse-brand {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(68, 100, 170, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(68, 100, 170, 0);
+  }
+}
+
+.animate-pulse-brand {
+  animation: pulse-brand 2s infinite;
+}

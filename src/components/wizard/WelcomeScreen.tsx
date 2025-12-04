@@ -90,7 +90,7 @@ export function WelcomeScreen() {
             <Button
               size="xl"
               onClick={nextStep}
-              className="group"
+              className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text group"
             >
               <Rocket className="w-5 h-5 mr-2 group-hover:animate-bounce" />
               Bắt đầu lập kế hoạch

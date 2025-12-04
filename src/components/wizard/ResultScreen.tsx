@@ -208,8 +208,8 @@ Chi phí sau ưu đãi: ${formatCurrency(calculation.total * 0.9)}
 Ưu đãi có hiệu lực đến hết ngày [Ngày cụ thể].
 
 Để đăng ký hoặc tìm hiểu thêm, Quý khách có thể:
-📞 Gọi: 0901 234 567
-📧 Email: contact@thewinhouse.com
+📞 Gọi: 0899 789 799
+📧 Email: info@thewinhouse.com
 💬 Đặt lịch tư vấn: https://thewinhouse.com/booking
 
 Trân trọng,
@@ -436,10 +436,10 @@ Trân trọng,
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="default" size="lg" className="group">
                 <Phone className="w-4 h-4 mr-2" />
-                Gọi: 0901 234 567
+                Gọi: 0899 789 799
               </Button>
               <Button variant="outline" size="lg">
-                <a href="https://thewinhouse.com/booking" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                <a href="https://zalo.me/0899789799" target="_blank" rel="noopener noreferrer" className="flex items-center">
                   Đặt lịch tư vấn
                   <ExternalLink className="w-4 h-4 ml-2" />
                 </a>

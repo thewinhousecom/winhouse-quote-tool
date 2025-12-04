@@ -28,9 +28,9 @@ const features = [
 ];
 
 const stats = [
-  { value: '500+', label: 'Dự án hoàn thành' },
+  { value: '580+', label: 'Dự án hoàn thành' },
   { value: '98%', label: 'Khách hàng hài lòng' },
-  { value: '5+', label: 'Năm kinh nghiệm' },
+  { value: '9+', label: 'Năm kinh nghiệm' },
 ];
 
 export function WelcomeScreen() {
